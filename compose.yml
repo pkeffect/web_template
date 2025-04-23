@@ -1,0 +1,9 @@
+services:
+  web-template-development:
+    build: .
+    container_name: web_template
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./src:/app/src:rw  # Mount src directory for hot-reloading
+    restart: unless-stopped

@@ -1,0 +1,96 @@
+/* 
+ * Loading Screen CSS
+ * Displays a loading animation until all content is loaded
+ */
+
+/* Loading Screen Container */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a; /* Dark grey that works with both themes */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000; /* Highest z-index to cover everything */
+    transition: opacity 0.3s ease-out;
+}
+
+.loading-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Loading Spinner */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    border-top-color: #7289DA; /* Primary color */
+    animation: spin 1s ease-in-out infinite;
+}
+
+/* Text below spinner */
+.loading-text {
+    margin-top: 20px;
+    color: #e2e2e2;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Progress bar (optional) */
+.loading-progress {
+    width: 200px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.loading-progress-bar {
+    height: 100%;
+    width: 0; /* Will be updated via JavaScript */
+    background-color: #7289DA; /* Primary color */
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+/* Hide content until loaded */
+body.loading {
+    overflow: hidden; /* Prevent scrolling while loading */
+}
+
+body.loading main,
+body.loading header,
+body.loading footer {
+    opacity: 0;
+}
+
+/* Animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Pulse animation for text */
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+.loading-text {
+    animation: pulse 1.5s infinite;
+}

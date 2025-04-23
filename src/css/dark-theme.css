@@ -1,0 +1,269 @@
+/* 
+ * Dark Theme CSS
+ * Applied when data-theme="dark" is set on the HTML element
+ */
+
+:root, html[data-theme="dark"] {
+    /* Color Variables - Dark Theme */
+    --color-bg: #0d1117;
+    --color-bg-secondary: #161b22;
+    --color-bg-tertiary: #21262d;
+    --color-bg-elevated: #30363d;
+    
+    --color-text: #e6edf3;
+    --color-text-secondary: #8b949e;
+    --color-text-tertiary: #6e7681;
+    
+    --color-border: #30363d;
+    --color-border-subtle: #21262d;
+    
+    --color-primary: #58a6ff;
+    --color-primary-hover: #79c0ff;
+    --color-primary-bg: rgba(56, 139, 253, 0.1);
+    
+    --color-secondary: #6e7681;
+    --color-secondary-hover: #8b949e;
+    
+    --color-success: #238636;
+    --color-success-hover: #2ea043;
+    --color-success-bg: rgba(35, 134, 54, 0.1);
+    
+    --color-warning: #9e6a03;
+    --color-warning-hover: #bb8009;
+    --color-warning-bg: rgba(187, 128, 9, 0.1);
+    
+    --color-error: #da3633;
+    --color-error-hover: #f85149;
+    --color-error-bg: rgba(248, 81, 73, 0.1);
+    
+    --color-accent: #388bfd;
+    --color-accent-subtle: rgba(56, 139, 253, 0.1);
+    
+    /* Scrollbar Colors */
+    --scrollbar-track: #161b22;
+    --scrollbar-thumb: #30363d;
+    --scrollbar-thumb-hover: #6e7681;
+    
+    /* Header & Footer */
+    --header-bg: rgba(13, 17, 23, 0.95);
+    --footer-bg: #161b22;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.25);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.25);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+    
+    /* Toggle icon display */
+    --light-icon-display: block;
+    --dark-icon-display: none;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* Links */
+a {
+    color: var(--color-primary);
+}
+
+a:hover {
+    color: var(--color-primary-hover);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+}
+
+/* Layout Components */
+header {
+    background-color: var(--header-bg);
+    border-bottom: 1px solid var(--color-border);
+    backdrop-filter: blur(8px);
+}
+
+.logo svg {
+    color: var(--color-primary);
+}
+
+footer {
+    background-color: var(--footer-bg);
+    border-top: 1px solid var(--color-border);
+}
+
+.footer-left, .footer-right {
+    color: var(--color-text-secondary);
+}
+
+.social-links a {
+    color: var(--color-text-secondary);
+}
+
+.social-links a:hover {
+    color: var(--color-text);
+}
+
+.footer-links a {
+    color: var(--color-text-secondary);
+}
+
+.footer-links a:hover {
+    color: var(--color-primary);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--color-border-subtle);
+}
+
+/* Navigation */
+nav a {
+    color: var(--color-text);
+}
+
+nav a:hover {
+    color: var(--color-primary);
+}
+
+nav a.active {
+    color: var(--color-primary);
+}
+
+/* Icon Buttons */
+.icon-button {
+    color: var(--color-text);
+}
+
+.icon-button:hover {
+    background-color: var(--color-bg-tertiary);
+}
+
+/* Search */
+.search-container {
+    position: relative;
+}
+
+.search-input {
+    background-color: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    border-radius: var(--radius-full);
+    padding: var(--space-sm) var(--space-md);
+    padding-right: 2.5rem;
+    font-size: var(--font-size-sm);
+    width: 250px;
+}
+
+.search-input:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-primary-bg);
+}
+
+.search-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+    border: none;
+    color: var(--color-text-secondary);
+    padding: var(--space-sm);
+    cursor: pointer;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: var(--z-dropdown);
+    display: none;
+    min-width: 180px;
+    padding: var(--space-xs) 0;
+    margin: var(--space-xs) 0 0;
+    background-color: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+}
+
+.dropdown-menu-right {
+    right: 0;
+    left: auto;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: var(--space-sm) var(--space-md);
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--color-bg-tertiary);
+}
+
+.dropdown-divider {
+    height: 0;
+    margin: var(--space-xs) 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.caret {
+    width: 12px;
+    height: 12px;
+}
+
+/* Cards */
+.card {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.card-title {
+    color: var(--color-primary);
+}
+
+/* Theme Switch Icons */
+#light-icon {
+    display: var(--light-icon-display);
+}
+
+#dark-icon {
+    display: var(--dark-icon-display);
+}

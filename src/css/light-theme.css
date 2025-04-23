@@ -1,0 +1,228 @@
+/* 
+ * Light Theme CSS
+ * Applied when data-theme="light" is set on the HTML element
+ */
+
+html[data-theme="light"] {
+    /* Color Variables - Light Theme */
+    --color-bg: #ffffff;
+    --color-bg-secondary: #f6f8fa;
+    --color-bg-tertiary: #ebedf0;
+    --color-bg-elevated: #f6f8fa;
+    
+    --color-text: #24292f;
+    --color-text-secondary: #57606a;
+    --color-text-tertiary: #6e7781;
+    
+    --color-border: #d0d7de;
+    --color-border-subtle: #ebedf0;
+    
+    --color-primary: #0969da;
+    --color-primary-hover: #0452a5;
+    --color-primary-bg: rgba(9, 105, 218, 0.1);
+    
+    --color-secondary: #6e7781;
+    --color-secondary-hover: #57606a;
+    
+    --color-success: #1a7f37;
+    --color-success-hover: #116329;
+    --color-success-bg: rgba(26, 127, 55, 0.1);
+    
+    --color-warning: #9a6700;
+    --color-warning-hover: #7d4e00;
+    --color-warning-bg: rgba(154, 103, 0, 0.1);
+    
+    --color-error: #cf222e;
+    --color-error-hover: #a40e26;
+    --color-error-bg: rgba(207, 34, 46, 0.1);
+    
+    --color-accent: #0969da;
+    --color-accent-subtle: rgba(9, 105, 218, 0.1);
+    
+    /* Scrollbar Colors */
+    --scrollbar-track: #f1f1f1;
+    --scrollbar-thumb: #c1c1c1;
+    --scrollbar-thumb-hover: #a1a1a1;
+    
+    /* Header & Footer */
+    --header-bg: rgba(255, 255, 255, 0.95);
+    --footer-bg: #f6f8fa;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.05);
+    
+    /* Toggle icon display */
+    --light-icon-display: none;
+    --dark-icon-display: block;
+}
+
+/* Base Styles */
+html[data-theme="light"] body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* Links */
+html[data-theme="light"] a {
+    color: var(--color-primary);
+}
+
+html[data-theme="light"] a:hover {
+    color: var(--color-primary-hover);
+}
+
+/* Scrollbar Styling */
+html[data-theme="light"] ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 4px;
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+}
+
+/* Layout Components */
+html[data-theme="light"] header {
+    background-color: var(--header-bg);
+    border-bottom: 1px solid var(--color-border);
+    backdrop-filter: blur(8px);
+}
+
+html[data-theme="light"] .logo svg {
+    color: var(--color-primary);
+}
+
+html[data-theme="light"] footer {
+    background-color: var(--footer-bg);
+    border-top: 1px solid var(--color-border);
+}
+
+html[data-theme="light"] .footer-left, 
+html[data-theme="light"] .footer-right {
+    color: var(--color-text-secondary);
+}
+
+html[data-theme="light"] .social-links a {
+    color: var(--color-text-secondary);
+}
+
+html[data-theme="light"] .social-links a:hover {
+    color: var(--color-text);
+}
+
+html[data-theme="light"] .footer-links a {
+    color: var(--color-text-secondary);
+}
+
+html[data-theme="light"] .footer-links a:hover {
+    color: var(--color-primary);
+}
+
+html[data-theme="light"] .footer-bottom {
+    border-top: 1px solid var(--color-border-subtle);
+}
+
+/* Navigation */
+html[data-theme="light"] nav a {
+    color: var(--color-text);
+}
+
+html[data-theme="light"] nav a:hover {
+    color: var(--color-primary);
+}
+
+html[data-theme="light"] nav a.active {
+    color: var(--color-primary);
+}
+
+/* Icon Buttons */
+html[data-theme="light"] .icon-button {
+    color: var(--color-text);
+}
+
+html[data-theme="light"] .icon-button:hover {
+    background-color: var(--color-bg-tertiary);
+}
+
+/* Search */
+html[data-theme="light"] .search-container {
+    position: relative;
+}
+
+html[data-theme="light"] .search-input {
+    background-color: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    border-radius: var(--radius-full);
+    padding: var(--space-sm) var(--space-md);
+    padding-right: 2.5rem;
+    font-size: var(--font-size-sm);
+    width: 250px;
+}
+
+html[data-theme="light"] .search-input:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-primary-bg);
+}
+
+html[data-theme="light"] .search-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+    border: none;
+    color: var(--color-text-secondary);
+    padding: var(--space-sm);
+    cursor: pointer;
+}
+
+/* Dropdown */
+html[data-theme="light"] .dropdown-menu {
+    background-color: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-lg);
+}
+
+html[data-theme="light"] .dropdown-menu a {
+    color: var(--color-text);
+}
+
+html[data-theme="light"] .dropdown-menu a:hover {
+    background-color: var(--color-bg-tertiary);
+}
+
+html[data-theme="light"] .dropdown-divider {
+    border-top: 1px solid var(--color-border);
+}
+
+/* Cards */
+html[data-theme="light"] .card {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+}
+
+html[data-theme="light"] .card-title {
+    color: var(--color-primary);
+}
+
+/* Theme Switch Icons */
+html[data-theme="light"] #light-icon {
+    display: var(--light-icon-display);
+}
+
+html[data-theme="light"] #dark-icon {
+    display: var(--dark-icon-display);
+}

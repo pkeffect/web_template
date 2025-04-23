@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block title %}Web Template - Home{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Hero section -->
+    <section class="hero-section">
+        <h1 class="hero-title">Modern Web Template</h1>
+        <p class="hero-description">A lightweight, dockerized web template with hot-reloading for rapid development.</p>
+        
+        <div class="button-group text-center mt-4">
+            <a href="#features" class="btn btn-primary">Get Started</a>
+            <a href="https://github.com/yourusername/web-template" class="btn btn-secondary">View on GitHub</a>
+        </div>
+    </section>
+    
+    <!-- Features section -->
+    <section id="features" class="card">
+        <h2 class="card-title">Key Features</h2>
+        <ul class="feature-list">
+            <li>
+                <span class="feature-icon">🔄</span>
+                <div class="feature-content">
+                    <h3>Hot Reloading</h3>
+                    <p>Changes to HTML, CSS, and JavaScript files are immediately reflected in the browser.</p>
+                </div>
+            </li>
+            <li>
+                <span class="feature-icon">🐳</span>
+                <div class="feature-content">
+                    <h3>Docker Integration</h3>
+                    <p>Containerized for consistent development environments across all platforms.</p>
+                </div>
+            </li>
+            <li>
+                <span class="feature-icon">🎨</span>
+                <div class="feature-content">
+                    <h3>Theming Support</h3>
+                    <p>Toggle between light and dark themes with a simple click.</p>
+                </div>
+            </li>
+            <li>
+                <span class="feature-icon">📱</span>
+                <div class="feature-content">
+                    <h3>Responsive Design</h3>
+                    <p>Looks great on desktop, tablet, and mobile devices.</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+    
+    <!-- Component Demo -->
+    <section class="card">
+        <h2 class="card-title">Component Demo</h2>
+        
+        <div class="component-grid">
+            <!-- Buttons -->
+            <div class="component-item">
+                <h3>Buttons</h3>
+                <div class="component-demo">
+                    <button class="btn btn-primary">Primary</button>
+                    <button class="btn btn-secondary">Secondary</button>
+                    <button class="btn btn-danger">Danger</button>
+                </div>
+            </div>
+            
+            <!-- Alerts -->
+            <div class="component-item">
+                <h3>Alerts</h3>
+                <div class="component-demo">
+                    <div class="alert alert-success">
+                        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        <span>Success alert example</span>
+                    </div>
+                    <div class="alert alert-error">
+                        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                        </svg>
+                        <span>Error alert example</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cards -->
+            <div class="component-item">
+                <h3>Cards</h3>
+                <div class="component-demo">
+                    <div class="mini-card">
+                        <h4>Card Title</h4>
+                        <p>This is a sample card with some content.</p>
+                        <a href="#" class="btn btn-sm btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Form Elements -->
+            <div class="component-item">
+                <h3>Form Elements</h3>
+                <div class="component-demo">
+                    <input type="text" class="form-input" placeholder="Text input">
+                    <select class="form-select">
+                        <option>Select option</option>
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Demo-specific JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Index page loaded');
+    });
+</script>
+{% endblock %}
