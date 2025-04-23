@@ -1,6 +1,6 @@
 /**
  * Loading Screen Manager
- * Handles the display and hiding of the loading screen
+ * A streamlined, performance-optimized loading screen system
  */
 
 // DOM elements
@@ -19,12 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set body as loading
     document.body.classList.add('loading');
     
-    // Create and append loading screen if it doesn't exist
-    if (!document.querySelector('.loading-screen')) {
-        createLoadingScreen();
-    }
-    
-    // Initialize variables
+    // Get references to elements
     loadingScreen = document.querySelector('.loading-screen');
     progressBar = document.querySelector('.loading-progress-bar');
     
@@ -36,29 +31,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // If there are no resources to track or very few, set a minimum loading time
     if (totalResources < 5) {
-        setTimeout(hideLoadingScreen, 1000);
+        setTimeout(hideLoadingScreen, 800);
     }
     
     // Fallback in case some resources fail to load
-    setTimeout(hideLoadingScreen, 8000);
+    setTimeout(hideLoadingScreen, 5000);
 });
-
-/**
- * Create loading screen element
- */
-function createLoadingScreen() {
-    const loadingHTML = `
-        <div class="loading-screen">
-            <div class="spinner"></div>
-            <div class="loading-text">Loading...</div>
-            <div class="loading-progress">
-                <div class="loading-progress-bar"></div>
-            </div>
-        </div>
-    `;
-    
-    document.body.insertAdjacentHTML('afterbegin', loadingHTML);
-}
 
 /**
  * Count total resources that need to be loaded
@@ -69,15 +47,8 @@ function countResources() {
         totalResources += elements.length;
     });
     
-    // Add CSS files that aren't loaded via link tags
-    const styleSheets = document.styleSheets;
-    for (let i = 0; i < styleSheets.length; i++) {
-        if (styleSheets[i].href) {
-            totalResources++;
-        }
-    }
-    
-    console.log(`Total resources to load: ${totalResources}`);
+    // Log resource count for debugging
+    console.log(`Loading ${totalResources} resources`);
 }
 
 /**
@@ -128,7 +99,7 @@ function trackResourceLoading() {
     // Listen for window load event as a backup
     window.addEventListener('load', function() {
         // Force complete loading after window load
-        setTimeout(hideLoadingScreen, 500);
+        setTimeout(hideLoadingScreen, 300);
     });
 }
 
