@@ -29,13 +29,13 @@ A lightweight, dockerized web template with hot-reloading for rapid development,
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/web-template.git
+   git clone https://github.com/pkeffect/web-template.git
    cd web-template
    ```
 
 2. Start the Docker container:
    ```bash
-   docker-compose up -d
+   docker compose up -d
    ```
 
 3. Access the website:
@@ -78,10 +78,10 @@ web-template/
 
 ### Docker Commands
 
-- **Start container**: `docker-compose up -d`
-- **View logs**: `docker-compose logs -f`
-- **Stop container**: `docker-compose down`
-- **Rebuild container**: `docker-compose up -d --build`
+- **Start container**: `docker compose up -d`
+- **View logs**: `docker compose logs -f`
+- **Stop container**: `docker compose down`
+- **Rebuild container**: `docker compose up -d --build`
 
 ## Themes
 
