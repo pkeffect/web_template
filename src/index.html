@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/utilities.css">
-    <link rel="stylesheet" href="css/dark-theme.css" id="theme-style">
+    <link rel="stylesheet" href="css/dark-theme.css">
+    <link rel="stylesheet" href="css/light-theme.css">
     <!-- Preload critical JavaScript -->
     <script src="js/loading.js"></script>
 </head>
@@ -317,24 +318,7 @@
     </div>
 
     <!-- JavaScript - Added at the end to ensure DOM is loaded first -->
+    <script src="js/theme.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        // Update year in footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        
-        // Update current datetime in footer
-        function updateDateTime() {
-            const now = new Date();
-            document.getElementById('current-datetime').textContent = now.toLocaleDateString() + ' ' + 
-                now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-        }
-        updateDateTime();
-        setInterval(updateDateTime, 60000); // Update every minute
-        
-        // Demo-specific JavaScript
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Page loaded successfully');
-        });
-    </script>
 </body>
 </html>
