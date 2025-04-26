@@ -582,3 +582,78 @@ input:focus:not(:focus-visible), select:focus:not(:focus-visible),
 textarea:focus:not(:focus-visible) {
     outline: none;
 }
+
+/* 
+ * Dropdown Menu Improvements
+ * Add these rules to main.css to fix the dropdown behavior
+ */
+
+/* Current dropdown behavior */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: var(--z-dropdown);
+    display: none;
+    min-width: 180px;
+    padding: var(--space-xs) 0;
+    margin: var(--space-xs) 0 0;
+    background-color: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+/* UPDATED DROPDOWN BEHAVIOR */
+/* Replace the current .dropdown:hover .dropdown-menu rule with these improved rules */
+
+/* Fix dropdown menu so it stays visible when hovering on dropdown menu items */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Alternative behavior using JavaScript (add this to main.js) */
+/* 
+function initDropdowns() {
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        
+        // Show/hide on click instead of hover
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            menu.classList.toggle('show');
+        });
+        
+        // Hide when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!dropdown.contains(e.target)) {
+                menu.classList.remove('show');
+            }
+        });
+    });
+}
+
+// Add to the initUIComponents function
+// initDropdowns();
+*/
+
+/* CSS needed for the JavaScript-based approach */
+/*
+.dropdown-menu.show {
+    display: block;
+}
+*/
